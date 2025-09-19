@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O mně</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" loading="lazy">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="omne.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Přeskočit na obsah</a>
+  <div id="top"></div>
+
+  <nav aria-label="Hlavní navigace">
+    <ul>
+      <li><a href="index.html">Portfolio</a></li>
+      <li><a href="o-mne.html" aria-current="page">O mně</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="o-mne">
+      <h1>O mně</h1>
+      <div class="o-mne-container">
+        <!-- Text vlevo -->
+        <div class="o-mne-text">
+          <p><strong>Ahoj, díky že jste zavítali na mou stránku. </strong></p>
+          <p>Jmenuji se <strong>Eliška Holcová</strong> a ráda propojuji kreativitu s moderními technologiemi. 
+          Baví mě grafický design a tvorba vizuálů v Canvě.
+          Postupně se učím i základy UX/UI, protože mě láká spojovat estetiku s funkčností.</p>
+
+          <p>Ve volném čase se věnuji kreslení, deskovým i počítačovým hrám
+            a také jsem si sama nakódovala tento web, abych si vyzkoušela práci s HTML, CSS a designem v praxi.
+            Miluju, když můžu tvořit něco, co má nápad a styl – ať už jde o obrázek, web nebo vizuál.</p>
+
+          <p>Na tomto webu najdete ukázky mé tvorby i projektů, na kterých si zkouším nové věci. 
+          Budu ráda, když mi napíšete, jak se vám moje <a href="index.html">portfolio</a> líbí,
+          nebo pokud máte jakékoliv dotazy – můžete mi je poslat přes 
+          <a href="#kontaktni-formular">kontaktní formulář</a>.</p>
+        </div>
+
+        <!-- Fotka vpravo -->
+        <div class="o-mne-foto">
+          <img src="moje-fotka.jpeg" alt="Eliška Holcová">
+        </div>
+      </div>
+    </section>
+
+    <section class="kontakt">
+      <h2>Kontakt</h2>
+      <div class="kontakt-info">
+        <p><strong>Jméno a příjmení:</strong> Eliška Holcová</p>
+        <p><i class="fas fa-envelope"></i> 
+           <a href="mailto:elis.holcova@gmail.com">elis.holcova@gmail.com</a>
+        </p>
+        <p><i class="fab fa-linkedin"></i> 
+           <a href="https://www.linkedin.com/in/eliska-holcova/" target="_blank" rel="noopener noreferrer">linkedin.com/in/eliska-holcova</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="formular">
+      <h2 id="kontaktni-formular">Napište mi zprávu</h2>
+      <form class="kontakt-formular">
+        <p id="form-status" aria-live="polite" style="text-align:center;margin:8px 0 0;"></p>
+        <input type="email" id="email" name="email"
+            placeholder="Váš email např. jan.novak@email.cz"
+            autocomplete="email" inputmode="email" required>
+
+        <textarea id="zprava" name="zprava" rows="5"
+              placeholder="Sem napište svou zprávu..."
+              autocomplete="off" required></textarea>
+
+        <button type="submit" class="btn">Odeslat</button>
+      </form>
+    </section>
+
+    <!-- 🔼 TLAČÍTKO "NAHORU" – vždy viditelné -->
+    <a href="#top" class="btn-top-omne show" aria-label="Zpět nahoru">↑ Nahoru</a>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <!-- Vlevo logo -->
+      <div class="footer-left">
+        <img src="img/elkira-designs.png" alt="Elkira Designs logo" aria-hidden="true" class="footer-logo" loading="lazy">
+      </div>
+
+      <!-- Svislé tečky uprostřed -->
+      <div class="footer-divider" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <!-- Vpravo text + navigace -->
+      <div class="footer-right">
+        <div class="footer-row">
+          <span class="row-left">© 2025 Elkira Designs</span>
+          <span class="row-sep" aria-hidden="true"></span>
+
+          <span class="row-right">Všechna práva vyhrazena.</span>
+        </div>
+
+        <div class="footer-row">
+          <a class="row-left" href="index.html#design">Portfolio</a>
+          <span class="row-sep" aria-hidden="true"></span>
+
+          <a class="row-right" href="#top">O mně</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
