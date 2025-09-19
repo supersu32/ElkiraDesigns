@@ -21,20 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleBtn(); // spustit hned po načtení
 });
 
-
-
-
-// falešné odeslání formuláře
+// odeslání formuláře přes Formspree
 (function(){
   const form = document.querySelector('.kontakt-formular');
   const status = document.getElementById('form-status');
   if (!form || !status) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = form.querySelector('input[type="email"]');
     const msg = form.querySelector('textarea');
 
+    // validace
     if (!email.checkValidity()) {
       status.textContent = 'Zkontrolujte prosím e-mail.';
       status.style.color = '#9b0000';
@@ -48,9 +46,29 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    status.textContent = 'Zpráva byla odeslána. Děkuji!';
-    status.style.color = '#1a7f37';
-    form.reset();
+    // odeslání na Formspree
+    const data = new FormData(form);
+    try {
+      const response = await fetch("https://formspree.io/f/mjkenoka", {
+        method: "POST",
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.textContent = 'Zpráva byla odeslána. Děkuji!';
+        status.style.color = '#1a7f37';
+        form.reset();
+      } else {
+        status.textContent = 'Došlo k chybě při odesílání. Zkuste to prosím znovu.';
+        status.style.color = '#9b0000';
+      }
+    } catch (error) {
+      status.textContent = 'Chyba připojení. Zkontrolujte internet.';
+      status.style.color = '#9b0000';
+    }
   });
 })();
+
+
 
